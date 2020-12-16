@@ -12,8 +12,18 @@ class Form extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
+    fetch('/users', { 
+      method: 'POST',
+      data: {
+        commerce: this.ref.commerce,
+        product: this.ref.product,
+        gender: this.ref.gender,
+        audience: this.ref.audience,
+        price: this.ref.price,
+        app: this.ref.app
+      }
+    })
   }
 
   render() {
@@ -21,27 +31,27 @@ class Form extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           E-commerce
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="commerce" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Type de Produit/ Marque
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="product" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Genre recherché
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="gender" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Public ciblé
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="audience" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Tarif de l'influenceur
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="price" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Application souhaitée
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" ref="app" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
