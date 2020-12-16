@@ -4,11 +4,25 @@
   "description": "Influencer Cloud Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack",
+    "prod": "NODE_ENV=production webpack --progress"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fendorei/cloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fendorei/cloud/issues"
+  },
+  "homepage": "https://github.com/fendorei/cloud#readme"
 }
