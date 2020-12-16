@@ -2,13 +2,13 @@ require('dotenv').config
 
 const PORT = process.env.PORT || 3000;
 
-const mysql = require('mysql');
+const postgresql = require('postgresql');
 const express = require('express');
 const app = express();
 
 app.use(express.json());
 
-const connection = mysql.createConnection({
+const connection = postgresql.createConnection({
     host: 'localhost',
     user: 'me',
     password: 'secret',
