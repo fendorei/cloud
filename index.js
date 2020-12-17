@@ -17,9 +17,9 @@ const connection = postgresql.createConnection({
 
 connection.connect();
 
-app.post('/users', function(req, res) {
+app.post('/influenceurs', function(req, res) {
     const commerce = req.body;
-    const query = connection.query('SELECT commerce, product, gender, audience, price, app FROM users', function(err, result) {
+    const query = connection.query('SELECT commerce, product, gender, audience, price, app FROM influenceurs', function(err, result) {
         if (err) throw err;
         console.log(result);
     });

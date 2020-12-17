@@ -2,7 +2,7 @@
   "name": "cloud",
   "version": "1.0.0",
   "description": "Influencer Cloud Project",
-  "main": "index.js",
+  "main": "pages/form.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
@@ -19,7 +19,6 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "webpack": "^5.10.3",
     "webpack-cli": "^4.2.0"
   },
   "repository": {
@@ -29,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/fendorei/cloud/issues"
   },
-  "homepage": "https://github.com/fendorei/cloud#readme"
+  "homepage": "https://github.com/fendorei/cloud#pages/form.js"
 }
