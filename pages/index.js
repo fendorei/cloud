@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../App';
 
 class Form extends React.Component {
     constructor(props) {
@@ -32,12 +35,12 @@ class Form extends React.Component {
       fetch('/influenceurs', { 
         method: 'POST',
         data: {
-          commerce: this.ref.commerce,
-          product: this.ref.product,
-          gender: this.ref.gender,
-          audience: this.ref.audience,
-          price: this.ref.price,
-          app: this.ref.app
+          commerce: this.state.commerce,
+          product: this.state.product,
+          gender: this.state.gender,
+          audience: this.state.audience,
+          price: this.state.price,
+          app: this.state.app
         }
       })
     }
