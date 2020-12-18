@@ -22,6 +22,71 @@ app.get('/', (req, res) => {
   })
 })
 
-app.listen(port, () => {
+app.get('/:domaine', (req, res) => {
+    const product = req.params.product;
+    db.select('*')
+        .from('influenceurs')
+        .where('influenceur_id', '=', product)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.get('/:sexe', (req, res) => {
+    const gender = req.params.gender;
+    db.select('*')
+        .from('influenceurs')
+        .where('influenceur_id', '=', gender)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.get('/:public_cible', (req, res) => {
+    const audience = req.params.audience;
+    db.select('*')
+        .from('influenceurs')
+        .where('influenceur_id', '=', audience)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.get('/:tarif', (req, res) => {
+    const price = req.params.price;
+    db.select('*')
+        .from('influenceurs')
+        .where('influenceur_id', '=', price)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.get('/:reseau', (req, res) => {
+    const app = req.params.app;
+    db.select('*')
+        .from('influenceurs')
+        .where('influenceur_id', '=', app)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+  app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
